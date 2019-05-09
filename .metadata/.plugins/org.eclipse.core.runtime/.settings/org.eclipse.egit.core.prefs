@@ -1,3 +1,5 @@
-GitRepositoriesView.GitDirectories=
-GitRepositoriesView.GitDirectories.relative=
+GitRepositoriesView.GitDirectories=/Users/onatalia86/eclipse-workspace/.git\:
+GitRepositoriesView.GitDirectories.relative=.git\:
+RepositorySearchDialogSearchPath=/Users/onatalia86/eclipse-workspace
+core_defaultRepositoryDir=/Users/onatalia86/eclipse-workspace
 eclipse.preferences.version=1
