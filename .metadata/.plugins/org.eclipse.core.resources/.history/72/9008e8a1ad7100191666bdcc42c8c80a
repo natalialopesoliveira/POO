@@ -1,0 +1,31 @@
+
+public class Livro {
+	private String titulo;
+	private String autor;
+	private int numeroPaginas;
+	private int anoEdicao;
+	
+	//construtores sobrecarregados
+	
+	//interface get e set
+	void setTitulo(String _titulo) {
+		this.titulo = _titulo;
+	}
+	
+	void setAutor(String _autor) {
+		this.autor = _autor;
+	}
+	
+	public String ToString() {
+		StringBuilder dados = new StringBuilder();
+		dados.append("Título: ");
+		dados.append(this.getTitulo());
+		dados.append("\nAutor: ");
+		dados.append(this.getAutor());
+		dados.append("\nNúmero de páginas: ");
+		dados.append(this.getNumeroPaginas());
+		dados.append("\nAno de Edição: ");
+		dados.append(this.getAnoEdicao());
+		return dados.toString();
+	}
+}

@@ -1,0 +1,46 @@
+
+public class LivroDeBiblioteca extends Livro {
+	private enum StatusEmprestimo {
+		EMPRESTADO, ACERVO, REPARACAO, DESAPARECIDO
+	};
+
+	private StatusEmprestimo statusEmprestimo;
+	private String localizacao;
+	private String descricao;
+	
+	//construtores sobrecarregados
+	
+	//métodos interface set e get
+	public String getDescricao() {
+		return this.descricao;
+	}
+	
+	public boolean isEmprestado(){
+		if(this.statusEmprestimo == StatusEmprestimo.EMPRESTADO) return true;
+		else return false;
+	}
+	
+	public void empresta(){
+		this.statusEmprestimo = StatusEmprestimo.EMPRESTADO;
+	}
+	
+	public void devolve() {
+		this.statusEmprestimo = StatusEmprestimo.ACERVO;
+	}
+	
+	public String localiza() {
+		if(this.statusEmprestimo == StatusEmprestimo.EMPRESTADO) return "Emprestado";
+		else if (this.statusEmprestimo == StatusEmprestimo.ACERVO) return "No Acervo Geral";
+		else if (this.statusEmprestimo == StatusEmprestimo.REPARACAO) return "Na Sala de Reparação";
+		else if (this.statusEmprestimo == StatusEmprestimo.DESAPARECIDO) return "Desaparecido";
+		return "Impossível localizar";
+	}
+	
+	public String apresentaDescricao() {
+		return this.getDescricao()s;
+	}
+	
+	public String toString() {
+		
+	}
+}

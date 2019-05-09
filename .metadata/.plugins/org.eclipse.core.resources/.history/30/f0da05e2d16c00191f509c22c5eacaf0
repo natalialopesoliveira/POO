@@ -1,0 +1,18 @@
+
+public class TarefaHorario extends Horario{
+	private String descricao;
+
+	public TarefaHorario() {
+		this(0,0,"tarefa não cadastrada");
+	}
+	
+	public TarefaHorario(int _horas, String _descricao) {
+		this(_horas,0,_descricao);
+	}
+	
+	public TarefaHorario(int _horas, int _minutos, String _descricao) {
+		this.setHoras(_horas);
+		this.setMinutos(_minutos);
+		
+	}
+}

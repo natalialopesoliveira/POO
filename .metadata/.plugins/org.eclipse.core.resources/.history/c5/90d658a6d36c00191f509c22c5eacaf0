@@ -1,0 +1,57 @@
+
+abstract public class Horario {
+	// campos encapsulados de forma privada
+	private int horas, minutos;
+
+	// construtores sobrecarregados
+	public Horario() {
+		this(0, 0);
+	}
+
+	public Horario(int _horas) {
+		this(_horas, 0);
+	}
+
+	public Horario(int _horas, int _minutos) {
+		this.setHoras(_horas);
+		this.setMinutos(_minutos);
+	}
+
+	// métodos set e get
+	public void setHoras(int _horas) {
+		this.horas = _horas;
+	}
+	
+	public void setMinutos(int _minutos) {
+		this.minutos = _minutos;
+	}
+	
+	public int getHoras() {
+		return this.horas;
+	}
+	
+	public int getMinutos() {
+		return this.minutos;
+	}
+	
+	//método equals()
+	public boolean equals(Object objeto) {
+		Horario aux = (Horario) objeto;
+		if (this.getHoras() == aux.getHoras() && this.getMinutos() == aux.getMinutos()) {
+			return true;
+		}
+		return false;
+	}
+
+	//método compareTo()
+	
+	//método toString()
+	public String toString() {
+		StringBuilder dados = new StringBuilder();
+		dados.append(this.getHoras());
+		dados.append("h ");
+		dados.append(this.getMinutos());
+		dados.append("min");
+		return dados.toString();
+	}
+}

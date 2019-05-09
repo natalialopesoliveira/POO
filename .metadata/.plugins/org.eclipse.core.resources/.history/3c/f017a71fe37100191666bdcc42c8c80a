@@ -1,0 +1,10 @@
+package Aplicação;
+
+import Matemática.ConstantesMatematicas;
+
+public class Uso imports ConstantesMatematica{
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+}

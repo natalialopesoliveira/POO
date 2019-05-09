@@ -1,0 +1,9 @@
+package Matemática;
+import java.math.*;
+
+public interface ConstantesMatematicas {
+	final static public double RAIZDE2 = 1.4142135623730950488;
+	final static public double RAIZDE3 = 1.7320508075688772935;
+	final static public double RAIZDE5 = 2.2360679774997896964;
+	final static public double RAIZDE6 = RAIZDE2 * RAIZDE3;
+}

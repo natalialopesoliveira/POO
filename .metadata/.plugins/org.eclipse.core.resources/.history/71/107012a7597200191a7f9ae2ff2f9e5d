@@ -1,0 +1,13 @@
+package Aplicação;
+
+import Matemática.ConstantesMatematicas;
+
+public class Uso implements ConstantesMatematicas {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Raiz de 2: " + RAIZDE2);
+		System.out.println("Raiz de 3: " + RAIZDE3);
+		System.out.println("Raiz de 5: " + RAIZDE5);
+		System.out.println("Raiz de 6: " + RAIZDE6);
+	}
+}

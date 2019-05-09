@@ -1,0 +1,6 @@
+
+public class TarefaHorarioDuracao extends TarefaHorario{
+	private int duracao;
+	
+	
+}

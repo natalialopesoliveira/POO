@@ -1,0 +1,23 @@
+package Aplicação;
+
+import java.math.BigDecimal;
+
+import Matemática.ConstantesMatematicas;
+
+public class Uso implements ConstantesMatematicas {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		BigDecimal _RAIZDE2 = new BigDecimal(RAIZDE2);
+//		BigDecimal _RAIZDE3 = new BigDecimal(RAIZDE3);
+//		BigDecimal _RAIZDE5 = new BigDecimal(RAIZDE5);
+//		BigDecimal _RAIZDE6 = new BigDecimal(RAIZDE6);
+		_RAIZDE2 = _RAIZDE2.setScale(19, BigDecimal.ROUND_HALF_UP);
+		_RAIZDE3 = _RAIZDE3.setScale(19, BigDecimal.ROUND_HALF_UP);
+		_RAIZDE5 = _RAIZDE5.setScale(19, BigDecimal.ROUND_HALF_UP);
+		_RAIZDE6 = _RAIZDE6.setScale(19, BigDecimal.ROUND_HALF_UP);
+		System.out.println("Raiz de 2: " + _RAIZDE2);
+		System.out.println("Raiz de 3: " + _RAIZDE3);
+		System.out.println("Raiz de 5: " + _RAIZDE5);
+		System.out.println("Raiz de 6: " + _RAIZDE6);
+	}
+}

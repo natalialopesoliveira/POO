@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Uso {
+
+	private static Scanner scanner;
+
+	public static void main(String[] args) {
+		Horario horario[] = new Horario[50];
+		int i = 0;
+		while (i < 50) {
+			scanner = new Scanner(System.in);
+			try {
+				System.out.println("\nEscolha o tipo de cadastro que deseja criar:\n" + "1- Criar tarefa;\n"
+						+ "2- Criar tarefa especificando duração;\n3- Sair.");
+				int _opcao = scanner.nextInt();
+				scanner.nextLine();
+				if (_opcao ==1 || _opcao == 2) {
+					System.out.print("\n\nDigite apenas a hora (sem minutos): ");
+					int _horas = scanner.nextInt();
+					scanner.nextLine();
+					System.out.print("\nDigite apenas os minutos: ");
+					int _minutos = scanner.nextInt();
+					scanner.nextLine();
+					System.out.print("\nDigite a descriço da tarefa: ");
+					String _descricao = scanner.nextLine();
+					
+					if(_opcao==1) {
+						horario[i] = new TarefaHorario(_horas,_minutos,_descricao);
+					}else {
+						System.out.print("\nDigite apenas os minutos do tempo de duracao: ");
+						int _duracao = scanner.nextInt();
+						scanner.nextLine();
+						horario[i] = new TarefaHorario(_horas,_minutos,_descricao,_duracao);
+					}
+					i++;
+				}else if(_opcao == 3) {
+					i = 50;
+				}else {
+					System.out.println("\nNúmero inválido, tente novamente!");
+				}
+				
+				
+				
+				
+				
+			}catch(Exception e) {
+				
+			}
+		}
+	}
+
+}
