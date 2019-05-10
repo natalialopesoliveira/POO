@@ -1,0 +1,31 @@
+a) Cite diferenças e similaridades entre sobrecarregamento e sobreposição.
+
+O sobrecarregamento é a criação de diversos métodos com mesmo nome, porém com diferentes parâmetros;
+A sobreposição é a criação de um método já existente, porém o programador insere novo código que sobrepõe
+o anterior.
+
+
+
+
+
+
+b) Qual a diferença de vinculação estática para vinculação dinâmica?
+
+
+
+
+
+
+c) Que relação o polimorfismo tem com a herança, o sobrecarregamento e a vinculação dinâmica?
+
+
+
+
+
+
+d) É verdade que toda relação de herança entre duas classes poderia ser reescrita como uma relação de composição (ou agregação)?
+Se sim, dê exemplo e explique qual a inconveniência de se fazer isto?
+Sim, é possível criar um campo na "classe filha" cujo tipo seja da "classe pai". O único incoveniente é que
+teria que ter métodos get e set adequados para esse campo e seriam códigos desnecessários, tendo em vista que
+com a relação de herança isso não seria necessário, pois esses métodos também seriam herdados.
+
