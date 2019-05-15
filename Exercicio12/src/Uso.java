@@ -5,10 +5,9 @@ public class Uso {
 	private static Scanner scanner;
 
 	public static void main(String[] args) {
-		Funcionario funcionario[] = new Funcionario[50];
-
-		int i = 0;
-		while (i < 50) {
+		int i = 0, quant = 1;
+		Funcionario funcionario[] = new Funcionario[quant];
+		while (i < quant) {
 			scanner = new Scanner(System.in);
 			try {
 				System.out.println("\nEscolha o tipo de cadastro que deseja criar:\n" + "1- Funcionário;\n"
@@ -47,7 +46,7 @@ public class Uso {
 					}
 					System.out.println(funcionario[i].toString());
 				} else if (_opcao == 4) {
-					i = 50;
+					i = quant;
 					break;
 				} else {
 					System.out.println("Opção inválida");
@@ -64,7 +63,7 @@ public class Uso {
 
 		// imprimir o nome de cada indivíduo, o seu salário reajustado e o valor máximo
 		// permitido para empréstimo.
-		for (i = 0; i < 50; i++) {
+		for (i = 0; i < quant; i++) {
 			StringBuilder dados = new StringBuilder();
 			dados.append("\nNome: " + funcionario[i].getNome());
 			try {

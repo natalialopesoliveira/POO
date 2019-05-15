@@ -4,7 +4,7 @@ public class Cliente {
 	private String celular;
 	private String endereco;
 	private double rendaFamiliar;
-	static final public double DEFAULT_RENDA_FAMILIAR = 7.0;
+	static final public double DEFAULT_RENDA_FAMILIAR = 2000;
 	static private double renda = Cliente.DEFAULT_RENDA_FAMILIAR;
 
 	public Cliente() throws Exception {

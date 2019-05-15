@@ -41,7 +41,7 @@ public class Contato {
 		dados.append("Nome: ");
 		dados.append(this.getNome());
 		dados.append("\n");
-		dados.append(this.email.toString());
+		dados.append(this.email);
 		return dados.toString();
 	}
 }

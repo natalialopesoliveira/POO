@@ -65,21 +65,21 @@ public class Data {
 			return false;
 		}
 		if (_mes == 1 || _mes == 3 || _mes == 5 || _mes == 7 || _mes == 8 || _mes == 10 || _mes == 12) {
-			if (_dia > 31 || _dia < 0) {
+			if (_dia > 31 || _dia < 1) {
 				return false;
 			}
 		} else if (_mes == 2) {
 			if (Data.isBissexto(_ano)) {
-				if (_dia > 29 || _dia < 0) {
+				if (_dia > 29 || _dia < 1) {
 					return false;
 				}
 			} else {
-				if (_dia > 28 || _dia < 0) {
+				if (_dia > 28 || _dia < 1) {
 					return false;
 				}
 			}
 		} else {
-			if (_dia > 30 || _dia < 0) {
+			if (_dia > 30 || _dia < 1) {
 				return false;
 			}
 		}

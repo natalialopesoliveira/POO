@@ -67,7 +67,7 @@ public class Funcionario extends Pessoa {
 		StringBuilder dados = new StringBuilder();
 		dados.append(super.toString());
 		dados.append("\nData de Admissão: ");
-		dados.append(this.getDataDeAdmissao().getData());
+		dados.append(this.getDataDeAdmissao().toString());
 		dados.append("\nSalário: ");
 		dados.append(this.getSalario());
 		return dados.toString();
