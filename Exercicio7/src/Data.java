@@ -1,4 +1,27 @@
+//Inclua na classe Data o método compareTo que tem como objetivo receber um objeto da classe Data como
+//argumento e retornar 1, 0 ou -1, respectivamente se o objeto Data usado na chamada é maior, igual ou menor do
+//que o objeto Data passado como argumento.
 
+//Este método deve ser estático ou não? Porque?
+//	Não, pois como ele vai receber um objeto e comparar com o outro recebido como argumento, não pode
+//	ser estático. Porém, se for interesse do programa em algum momento comparar duas datas que ainda
+//	não foram instanciadas, ele deve sim ser estático.
+//	
+//Caso a resposta seja negativa, qual modificação você proporia para torná-lo estático? 
+//	No caso teria esse método não estático também, mas ele aproveitaria o código do método estático,
+//	que receberia os valores de dia, mês e ano das duas datas e compararia. O método não estático ape-
+//	nas chamaria esse método estático para fins de aproveitamento de código.
+
+//Normalmente as classes em Java possuem um método compareTo. Isso acontece porque ele pode ser usado por
+//classes que organizam coleções de objetos ordenados, tal como uma lista encadeada implementada pela classe
+//LinkedList.
+
+//Crie uma situação de uso para este método.
+//	Numa lista encadeada que se encontram dados de contatos de pacientes de clínica,
+//	e é necessário ordenar esses dados. Então o método compareTo serviria para comparar
+//	dois nós da lista e assim o programa tomaria uma decisão com base no valor retornado.
+	
+		
 public class Data {
 	private int dia, mes, ano;
 
@@ -178,19 +201,44 @@ public class Data {
 		//-1 this < _data => _data é mais antiga
 		//0 this == _data => 
 		// 1 this > _data => this é mais antiga
-		if (this.getAno() > _data.getAno()) {
+//		if (this.getAno() > _data.getAno()) {
+//			return -1;
+//		} else if (this.getAno() < _data.getAno()) {
+//			return 1;
+//		} else {
+//			if (this.getMes() > _data.getMes()) {
+//				return -1;
+//			} else if (this.getMes() < _data.getMes()) {
+//				return 1;
+//			} else {
+//				if (this.getDia() > _data.getDia()) {
+//					return -1;
+//				} else if (this.getDia() < _data.getDia()) {
+//					return 1;
+//				} else
+//					return 0;
+//			}
+//		}
+		return Data.compareTo(this.getDia(), this.getMes(), this.getAno(), _data.getDia(), _data.getMes(), _data.getAno());
+	}
+	
+	public static int compareTo(int _dia1, int _mes1, int _ano1, int _dia2, int _mes2, int _ano2) {
+		//-1 this < _data => _data é mais antiga
+		//0 this == _data => 
+		// 1 this > _data => this é mais antiga
+		if (_ano1 > _ano2) {
 			return -1;
-		} else if (this.getAno() < _data.getAno()) {
+		} else if (_ano1 < _ano2) {
 			return 1;
 		} else {
-			if (this.getMes() > _data.getMes()) {
+			if (_mes1 > _mes2) {
 				return -1;
-			} else if (this.getMes() < _data.getMes()) {
+			} else if (_mes1 < _mes2) {
 				return 1;
 			} else {
-				if (this.getDia() > _data.getDia()) {
+				if (_dia1> _dia2) {
 					return -1;
-				} else if (this.getDia() < _data.getDia()) {
+				} else if (_dia1 < _dia2) {
 					return 1;
 				} else
 					return 0;
