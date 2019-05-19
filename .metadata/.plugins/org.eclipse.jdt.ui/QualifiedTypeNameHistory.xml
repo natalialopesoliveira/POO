@@ -4,4 +4,5 @@
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="ContaBancaria"/>
 <fullyQualifiedTypeName name="Matemática.ConstantesMatematica"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
