@@ -18,7 +18,7 @@ public class ContaBancaria {
 		this.nome = _nome;
 	}
 
-	public void setTaxaDeJuros(double _taxa) {
+	public static void setTaxaDeJuros(double _taxa) {
 		ContaBancaria.taxaDeJuros = _taxa;
 	}
 
@@ -37,7 +37,7 @@ public class ContaBancaria {
 		return this.saldo;
 	}
 
-	public double getTaxaDeJuros() {
+	public static double getTaxaDeJuros() {
 		return ContaBancaria.taxaDeJuros;
 	}
 
@@ -48,7 +48,7 @@ public class ContaBancaria {
 	}
 
 	public void corrigirSaldo() throws Exception{
-		this.setSaldo(this.saldo * (1 - ContaBancaria.taxaDeJuros));
+		this.setSaldo(this.saldo * (100 - ContaBancaria.taxaDeJuros)/100);
 	}
 
 	public int compareTo(ContaBancaria _conta) {
@@ -65,10 +65,10 @@ public class ContaBancaria {
 
 	public String toString() {
 		StringBuilder dados = new StringBuilder();
-		dados.append("Nome: ");
+		dados.append("\nNome: ");
 		dados.append(this.getNome());
-		dados.append("Saldo: ");
+		dados.append("\nSaldo: ");
 		dados.append(this.getSaldo());
-		return null;
+		return dados.toString();
 	}
 }

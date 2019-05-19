@@ -6,7 +6,7 @@ public class Uso {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int quant = 50, i = 0;
+		int quant = 1, i = 0;
 		Cliente cliente[] = new Cliente[quant];
 		scanner = new Scanner(System.in);
 		while (i < quant) {
