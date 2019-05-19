@@ -1,3 +1,9 @@
+//Crie um método para verificar se uma determinada nota ultrapassou o limite permitido. Reflita se este
+//método deve ser estático ou não e explique o porquê da sua decisão
+//	Deve sim ser estático, pois noo momento em que se cadastra um aluno,
+//	é necessário ver se a nota se encontra dentro do limite pré-estabelecido.
+//	Depois que o aluno já está cadastrado, toda nota se encontra dentro dos limites,
+//	então é inútil a verificação.
 
 public class AlunoComTratamentoDeErro {
 	private String nome;
