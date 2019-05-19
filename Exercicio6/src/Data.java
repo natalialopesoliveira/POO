@@ -1,3 +1,28 @@
+//Analise a classe Data e faça as adequações necessárias para a utilização de membros estáticos.
+//Responda os itens para ajudar na análise:
+//	
+//● O método isDataValida deve ser estático? Justifique sua resposta.
+//	Sim, pois o interessante neste programa é verificar se a data é válida antes de
+//	instanciá-la. Após instanciada, temos certeza que qualquer data é válida, sendo inútil
+//	essa verificação.
+//	
+//● O método isAnoBissexto deve ser estático? Justifique sua resposta.
+//	Deve, pelo mesmo motivo do anterior. Este é um metodo que ajuda a verificar uma condição
+//	se a data é valida ou não. Então é essencial que ele seja estático.
+//		
+//● Seria útil uma versão sobrecarregada do isDataValida e do isAnoBissexto ambos sem argumentos?
+//	Não é útil uma versão sobrecarregada do isDataValida pois toda data instanciada é
+//	obrigatoriamente válida, portanto é uma verificação desnecessária. Mas o isAnoBissexto
+//	pode ser interesante como também um método não estático, caso o usuário queira verificar
+//	se uma data instanciada é de um ano bissexto.
+//	
+//Lembre-se que, neste caso, a data a ser verificada seria o próprio objeto que fez a chamada do método.
+//● Faça um método estático, com o nome de verificaECriaData, para verificar a validade de uma data passada
+//como argumento (dia, mês e ano, como três inteiros) retornando um objeto da classe Data se ok, ou null se
+//a data estiver incorreta. Sugestão: chame o construtor da classe Data para criar o objeto e use try-catch para
+//capturar o erro.
+
+
 
 public class Data {
 	private int dia, mes, ano;
