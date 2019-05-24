@@ -1,5 +1,0 @@
-
-public class LivroDeBiblioteca {
-	private enum statusEmprestimo { Emprestado, AcervoGeral, Reparacao, Sinistro, Desaparecido };
-	
-}

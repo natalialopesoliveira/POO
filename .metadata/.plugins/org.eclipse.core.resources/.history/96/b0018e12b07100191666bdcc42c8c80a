@@ -1,8 +1,0 @@
-
-public class LivroDeBiblioteca extends Livro{
-	private enum statusEmprestimo { Emprestado, AcervoGeral, Reparacao, Sinistro, Desaparecido };
-	private String localizacao;
-	private String descricao;
-	
-	
-}
