@@ -1,4 +1,4 @@
-package agenda;
+package colecoes;
 
 public class Agenda {
 
