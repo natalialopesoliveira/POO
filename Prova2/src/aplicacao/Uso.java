@@ -5,7 +5,6 @@ import agenda.*;
 import colecoes.*;
 import tempo.*;
 
-import java.awt.List;
 import java.util.LinkedList;
 import java.util.Scanner;
 
