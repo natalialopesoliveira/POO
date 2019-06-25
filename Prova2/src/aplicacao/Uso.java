@@ -81,7 +81,7 @@ public final class Uso {
 						System.out.print("\nDigite o horário do fim da meta: ");
 						String _horarioFim = scanner.nextLine();
 						System.out.print(
-								"\nEscolha a prioridade da meta:\n1- Urgente;\n2- Alta;\n3- Normal;\n4- Baixa;\n5-Mínima.");
+								"\nEscolha a prioridade da meta:\n1- Urgente;\n2- Alta;\n3- Normal;\n4- Baixa;\n5- Mínima.");
 						int _intPrioridade = scanner.nextInt();
 						if (_intPrioridade == 1)
 							_prioridade = Prioridade.URGENTE;
