@@ -121,13 +121,15 @@ public class ColecaoItensAgendaLinkedList implements Serializable {
 	}
 
 	/**
-	 * método para imprimir apenas objetos que se encontrem no intervalo de tempo
+	 * método que retorna uma instância da classe ColecaoItensAgendaLinkedList para
+	 * imprimir na classe Uso apenas objetos que se encontrem no intervalo de tempo
 	 * estabelecido pelo usuário.
 	 *
 	 * @param _periodo
 	 *            período estabelecido pelo usuário para comparação com os objetos
 	 *            já criados
-	 * @return Lista que contem os itens no intervalo
+	 * @return ColecaoItensAgendaLinkedList retorna um objeto da coleção com apenas
+	 *         os objetos que se encontram no intervalo
 	 */
 	public ColecaoItensAgendaLinkedList imprimeIntervalo(Periodo _periodo) {
 		ColecaoItensAgendaLinkedList intervalo = new ColecaoItensAgendaLinkedList();
@@ -139,10 +141,12 @@ public class ColecaoItensAgendaLinkedList implements Serializable {
 	}
 
 	/**
-	 * método para imprimir apenas objetos da classe Meta por ordem decrescente de
-	 * prioridade (URGENTE, ALTO, MEDIO, BAIXO, MINIMO). É criada uma LinkedList
-	 * auxiliar apenas para salvar objetos da classe Meta, os quais são ordenados
-	 * nessa lista. Após a impressão, a lista é deletada.
+	 * método que retorna uma LinkedList contendo um objeto da classe Meta para
+	 * imprimir na classe Uso apenas objetos da classe Meta por ordem decrescente de
+	 * priodidade
+	 * 
+	 * @return LinkedList<Meta> retorna uma LinkedList contendo um objeto da classe
+	 *         Meta
 	 */
 	public LinkedList<Meta> imprimeMetaPrioridade() {
 		List<Meta> meta = new LinkedList<Meta>();

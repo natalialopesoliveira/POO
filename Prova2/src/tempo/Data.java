@@ -2,33 +2,108 @@ package tempo;
 
 import java.io.Serializable;
 
-public class Data  implements Serializable {
+/**
+ * Classe que lida com data contendo dia, mes e ano e possui 5 construtores
+ * sobrecarregados
+ * 
+ * @author Natália Lopes Oliveira
+ *
+ */
+public class Data implements Serializable {
+	/**
+	 * dia da data
+	 */
+	/**
+	 * mes da data
+	 */
+	/**
+	 * ano da data
+	 */
 	private int dia, mes, ano;
 
+	/**
+	 * Construtor para inicializar os campos da data recebendo apenas o mês e o ano
+	 * 
+	 * @param _mes
+	 *            mês da data
+	 * @param _ano
+	 *            ano da data
+	 * @throws Exception
+	 *             caso receba um erro de que a data seja inválida
+	 */
 	public Data(int _mes, int _ano) throws Exception {
 		this(1, _mes, _ano);
 	}
 
+	/**
+	 * Construtor para inicializar os campos da data recebendo dia, mês e ano
+	 * 
+	 * @param _dia
+	 *            dia da data
+	 * @param _mes
+	 *            mês da data
+	 * @param _ano
+	 *            ano da data
+	 * @throws Exception
+	 *             caso receba um erro de que a data seja inválida
+	 */
 	public Data(int _dia, int _mes, int _ano) throws Exception {
 		this.setData(_dia, _mes, _ano);
 	}
 
+	/**
+	 * Construtor para inicializar os campos da data recebendo data no formato
+	 * string
+	 * 
+	 * @param _data
+	 *            string da data
+	 * @throws Exception
+	 *             caso receba um erro de que a data seja inválida
+	 */
 	public Data(String _data) throws Exception {
 		this.setData(_data);
 	}
 
+	/**
+	 * Construtor para inicializar os campos da data recebendo dia, mês e ano, porém
+	 * com o mês no formato String
+	 * 
+	 * @param _dia
+	 *            dia da data
+	 * @param _mes
+	 *            mês da data em string
+	 * @param _ano
+	 *            ano da data
+	 * @throws Exception
+	 *             caso receba um erro de que a data seja inválida
+	 */
 	public Data(int _dia, String _mes, int _ano) throws Exception {
 		this(_dia, Data.retornaMes(_mes), _ano);
 	}
 
-	public Data() {
-		try {
-			this.setData(1, 1, 1900);
-		} catch (Exception e) {
-
-		}
+	/**
+	 * Construtor vazio para inicializar os campos da data*
+	 * 
+	 * @throws Exception
+	 *             caso receba um erro de que a data seja inválida
+	 */
+	public Data() throws Exception {
+		this.setData(1, 1, 1900);
 	}
 
+	/**
+	 * método que recebe os valores do dia, mês e ano em inteiro, verifica sé é
+	 * válida e, se válida, atribui esses valores aos campos do objeto
+	 * 
+	 * @param _dia
+	 *            dia da data
+	 * @param _mes
+	 *            mês da data
+	 * @param _ano
+	 *            ano da data
+	 * @throws Exception
+	 *             caso receba um erro de que a data seja inválida
+	 */
 	public void setData(int _dia, int _mes, int _ano) throws Exception {
 		if (Data.isDataValida(_dia, _mes, _ano)) {
 			this.dia = _dia;
@@ -39,6 +114,14 @@ public class Data  implements Serializable {
 		}
 	}
 
+	/**
+	 * @param _data
+	 *            recebe a data como string e chama o método setData com os inteiros
+	 *            respectivos da data
+	 * @throws Exception
+	 *             caso tenha algum erro no processo de separar os inteiros da
+	 *             string
+	 */
 	public void setData(String _data) throws Exception {
 		int firstindex = _data.indexOf("/");
 		int secindex = _data.indexOf("/", firstindex + 1);
@@ -47,22 +130,53 @@ public class Data  implements Serializable {
 				Integer.parseInt(_data.substring((secindex + 1), (secindex + 5))));
 	}
 
+	/**
+	 * método que retorna o valor atual do campo do objeto instanciado
+	 * 
+	 * @return String a data no formato string
+	 */
 	public String getData() {
 		return this.toString();
 	}
 
+	/**
+	 * método que retorna o valor atual do campo dia do objeto instanciado
+	 * 
+	 * @return int o valor do dia
+	 */
 	public int getDia() {
 		return this.dia;
 	}
 
+	/**
+	 * método que retorna o valor atual do campo mês do objeto instanciado
+	 * 
+	 * @return int o valor do mês
+	 */
 	public int getMes() {
 		return this.mes;
 	}
 
+	/**
+	 * método que retorna o valor atual do campo ano do objeto instanciado
+	 * 
+	 * @return int o valor do ano
+	 */
 	public int getAno() {
 		return this.ano;
 	}
 
+	/**
+	 * Método estático que verifica se a data com os campos passados é válida ou não
+	 * 
+	 * @param _dia
+	 *            dia da data
+	 * @param _mes
+	 *            mês da data
+	 * @param _ano
+	 *            ano da data
+	 * @return boolean, true se a data for válida, false se não
+	 */
 	public static boolean isDataValida(int _dia, int _mes, int _ano) {
 		if (_ano < 1582) {
 			return false;
@@ -92,18 +206,46 @@ public class Data  implements Serializable {
 		return true;
 	}
 
-	public boolean isDataValida(int _dia, String _mes, int _ano) {
+	/**
+	 * Esse método estático com o objetivo de verificar se a data é válida chama o
+	 * método que retorna o número inteiro do mês correspondente a string passada e
+	 * chama o método estático de verificar data com os parâmetros de inteiros
+	 * 
+	 * @param _dia
+	 *            dia da data
+	 * @param _mes
+	 *            mês da data em string
+	 * @param _ano
+	 *            ano da data
+	 * @return boolean, true se a data for válida, false se não
+	 */
+	public static boolean isDataValida(int _dia, String _mes, int _ano) {
 		if (Data.isDataValida(_dia, Data.retornaMes(_mes), _ano))
 			return true;
 		return false;
 	}
 
+	/**
+	 * Método estático que verifica se o ano passado é bissexto ou não
+	 * 
+	 * @param _ano
+	 *            ano da data
+	 * @return boolean true se bissexto, false se não
+	 */
 	private static boolean isBissexto(int _ano) {
 		if ((_ano % 4 == 0 && _ano % 100 != 0) || _ano % 400 == 0)
 			return true;
 		return false;
 	}
 
+	/**
+	 * Método estático que recebe o mês em string e retorna o número inteiro
+	 * correspondente do mês
+	 * 
+	 * @param _mes
+	 *            mês da data em string
+	 * @return int retorna o número inteiro correspondente do mês
+	 */
 	public static int retornaMes(String _mes) {
 		_mes = _mes.toLowerCase();
 		switch (_mes) {
@@ -138,71 +280,39 @@ public class Data  implements Serializable {
 		}
 	}
 
-	public Data incrementa() {
-		try {
-			this.setData(this.getDia() + 1, this.getMes(), this.getAno());
-		} catch (Exception e) {
-			try {
-				this.setData(1, this.getMes() + 1, this.getAno());
-			} catch (Exception ex) {
-				try {
-					this.setData(1, 1, this.getAno() + 1);
-				} catch (Exception exc) {
-				}
-			}
-		}
-		return this;
-	}
-
-	public Data incrementa(int _quantidade) {
-		for (int i = 1; i < _quantidade; i++) {
-			this.incrementa();
-		}
-		return this;
-	}
-
-	public boolean equals(Object objeto) {
-		Data aux = (Data) objeto;
-		if (this.getDia() == aux.getDia() && this.getMes() == aux.getMes() && this.getAno() == aux.getAno()) {
-			return true;
-		}
-		return false;
-	}
-
-	public static Data verificaECriaData(int _dia, int _mes, int _ano) throws Exception {
-		if (Data.isDataValida(_dia, _mes, _ano)) {
-			Data dt = new Data(_dia, _mes, _ano);
-			return dt;
-		} else
-			return null;
-	}
-
+	/**
+	 * Método que retorna a chamada do método compareTo estático para comparar duas
+	 * datas e retorna um inteiro que representa qual é maior, igual ou menor
+	 * 
+	 * @param _data
+	 * @return int 1 caso a data que chamou seja maior que a data do parâmetro, 0 se
+	 *         igual, -1 se menor
+	 */
 	public int compareTo(Data _data) {
-		// -1 this < _data => _data é mais antiga
-		// 0 this == _data =>
-		// 1 this > _data => this é mais antiga
-		// if (this.getAno() > _data.getAno()) {
-		// return -1;
-		// } else if (this.getAno() < _data.getAno()) {
-		// return 1;
-		// } else {
-		// if (this.getMes() > _data.getMes()) {
-		// return -1;
-		// } else if (this.getMes() < _data.getMes()) {
-		// return 1;
-		// } else {
-		// if (this.getDia() > _data.getDia()) {
-		// return -1;
-		// } else if (this.getDia() < _data.getDia()) {
-		// return 1;
-		// } else
-		// return 0;
-		// }
-		// }
 		return Data.compareTo(this.getDia(), this.getMes(), this.getAno(), _data.getDia(), _data.getMes(),
 				_data.getAno());
 	}
 
+	/**
+	 * * Método estático que retorna um inteiro para comparar duas datas passadas
+	 * por parâmetro e retorna um inteiro que representa qual é maior, igual ou
+	 * menor
+	 * 
+	 * @param _dia1
+	 *            dia da primeira data
+	 * @param _mes1
+	 *            mês da primeira data
+	 * @param _ano1
+	 *            ano da primeira data
+	 * @param _dia2
+	 *            dia da segunda data
+	 * @param _mes2
+	 *            mês da segunda data
+	 * @param _ano2
+	 *            ano da segunda data
+	 * @return int 1 caso a primeira data do parâmetro seja maior que a segunda
+	 *         data, 0 se igual, -1 se menor
+	 */
 	public static int compareTo(int _dia1, int _mes1, int _ano1, int _dia2, int _mes2, int _ano2) {
 		// -1 this < _data => _data é mais antiga
 		// 0 this == _data =>
@@ -227,6 +337,11 @@ public class Data  implements Serializable {
 		}
 	}
 
+	/*
+	 * Método sobrescrito que retorna uma string representando a data
+	 * 
+	 * @return uma String que representa a data
+	 */
 	public String toString() {
 		StringBuilder data = new StringBuilder();
 		data.append(this.getDia());

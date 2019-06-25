@@ -164,6 +164,7 @@ public final class Uso {
 					System.out.println("\nOpção inválida. Tente novamente.\n");
 				}
 			} catch (Exception e) {
+				programa = 1;
 				System.out.println(e);
 				System.out.println("Dados errados, tente novamente.\n\n");
 			}
