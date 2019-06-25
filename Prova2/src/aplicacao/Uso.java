@@ -16,7 +16,8 @@ public final class Uso {
 
 	public static void main(String[] args) {
 		int opcao, cadastro, relatorio, programa = 0;
-		ColecaoItensAgendaLinkedList lista = new ColecaoItensAgendaLinkedList();
+//		ColecaoItensAgendaLinkedList lista = new ColecaoItensAgendaLinkedList();
+		Agenda lista = new Agenda();
 		scanner = new Scanner(System.in);
 		while (programa == 0) {
 			try {
@@ -109,8 +110,8 @@ public final class Uso {
 					if (relatorio == 1) {
 						System.out.println("\nTodos os itens agendados:\n");
 						Arquivo.grava("itensAgendados.my",lista);
-						ColecaoItensAgendaLinkedList itensAgendados1;
-						itensAgendados1 = (ColecaoItensAgendaLinkedList) Arquivo.le("itensAgendados.my");
+						Agenda itensAgendados1;
+						itensAgendados1 = (Agenda) Arquivo.le("itensAgendados.my");
 						System.out.println(itensAgendados1.toString());
 //						System.out.println(lista);
 					} else if (relatorio == 2) {
@@ -121,8 +122,8 @@ public final class Uso {
 
 						Arquivo.grava("imprimeIntervalo.my",
 								lista.imprimeIntervalo(new Periodo(_dataInicioIntervalo, _dataFimIntervalo)));
-						ColecaoItensAgendaLinkedList imprimeIntervalo1;
-						imprimeIntervalo1 = (ColecaoItensAgendaLinkedList) Arquivo.le("imprimeIntervalo.my");
+						Agenda imprimeIntervalo1;
+						imprimeIntervalo1 = (Agenda) Arquivo.le("imprimeIntervalo.my");
 						System.out.println(
 								"\nTodos os itens agendados no intervalo entre as datas " + _dataInicioIntervalo + " e "
 										+ _dataFimIntervalo + ": " + imprimeIntervalo1.toString());
