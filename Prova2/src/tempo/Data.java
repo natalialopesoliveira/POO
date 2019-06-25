@@ -206,19 +206,19 @@ public class Data {
 		// 0 this == _data =>
 		// 1 this > _data => this é mais antiga
 		if (_ano1 > _ano2) {
-			return -1;
-		} else if (_ano1 < _ano2) {
 			return 1;
+		} else if (_ano1 < _ano2) {
+			return -1;
 		} else {
 			if (_mes1 > _mes2) {
-				return -1;
-			} else if (_mes1 < _mes2) {
 				return 1;
+			} else if (_mes1 < _mes2) {
+				return -1;
 			} else {
 				if (_dia1 > _dia2) {
-					return -1;
-				} else if (_dia1 < _dia2) {
 					return 1;
+				} else if (_dia1 < _dia2) {
+					return -1;
 				} else
 					return 0;
 			}

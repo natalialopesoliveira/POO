@@ -10,6 +10,7 @@ public final class Uso {
 
 	private static Scanner scanner;
 	private static Prioridade _prioridade;
+
 	public static void main(String[] args) {
 		int opcao, cadastro, relatorio, programa = 0;
 		ColecaoItensAgendaLinkedList lista = new ColecaoItensAgendaLinkedList();
@@ -56,8 +57,7 @@ public final class Uso {
 						String _dataFim = scanner.nextLine();
 						System.out.print("\nDigite o horário do fim do lembrete: ");
 						String _horarioFim = scanner.nextLine();
-						System.out
-								.print("\nDigite a quantidade de minutos para alerta de antecedência do lembrete: ");
+						System.out.print("\nDigite a quantidade de minutos para alerta de antecedência do lembrete: ");
 						int _periodoAlerta = scanner.nextInt();
 						scanner.nextLine();
 						lista.insere(_titulo, _descricao, _dataInicio, _horarioInicio, _dataFim, _horarioFim,
@@ -111,22 +111,22 @@ public final class Uso {
 						String _dataInicioIntervalo = scanner.nextLine();
 						System.out.print("\nDigite a data de fim do intervalo: ");
 						String _dataFimIntervalo = scanner.nextLine();
-						System.out.println("\nTodos os itens agendados no intervalo entre as datas "+_dataInicioIntervalo+" e "+_dataFimIntervalo+": ");
-						System.out
-								.println(lista.imprimeIntervalo(new Periodo(_dataInicioIntervalo, _dataFimIntervalo)));
+						System.out.println("\nTodos os itens agendados no intervalo entre as datas "
+								+ _dataInicioIntervalo + " e " + _dataFimIntervalo + ": ");
+						lista.imprimeIntervalo(new Periodo(_dataInicioIntervalo, _dataFimIntervalo));
 					} else if (relatorio == 3) {
 						System.out.println("Todas as metas em ordem de prioridade:");
 						lista.imprimeMetaPrioridade();
 					} else if (relatorio == 4) {
 						System.out.println("Todos os lembretes em ordem de minutos de antecedência:");
 						lista.imprimeLembreteMinutos();
-					}else if(relatorio == 5) {
+					} else if (relatorio == 5) {
 						System.out.println("Todos os eventos em ordem alfabética de local:");
 						lista.imprimeEventoLocal();
-					}else {
+					} else {
 						System.out.println("\nOpção inválida. Tente novamente.\n");
 					}
-					
+
 				} else if (opcao == 3) {
 					programa = 1;
 					System.out.println("\n\n Programa encerrado.");

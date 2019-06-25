@@ -1,7 +1,8 @@
 package tempo;
 
 /**
- * Classe que representa o período, contendo data e horário de inicio e data e horário de fim.
+ * Classe que representa o período, contendo data e horário de inicio e data e
+ * horário de fim.
  *
  * @author Natália Lopes Oliveira
  * @version 1.0 (junho-2019)
@@ -16,6 +17,20 @@ public class Periodo {
 	/** horário do fim */
 	private Horario horarioFim;
 
+	/**
+	 * construtor para inicializar valores nos campos
+	 *
+	 * @param _dataInicio
+	 *            data do início instanciado na classe Data
+	 * @param _horarioInicio
+	 *            horário do início instanciado na classe Horario
+	 * @param _dataFim
+	 *            data do fim instanciado na classe Data
+	 * @param _horarioFim
+	 *            horário do fim instanciado na classe Horario
+	 * @exception Exception
+	 *                caso a data de inicio seja menor que a data do fim
+	 */
 	public Periodo(Data _dataInicio, Horario _horarioInicio, Data _dataFim, Horario _horarioFim) throws Exception {
 		if (_dataInicio.compareTo(_dataFim) == -1
 				|| (_dataInicio.compareTo(_dataFim) == 0 && _horarioInicio.compareTo(_horarioFim) == 1)) {
@@ -27,14 +42,52 @@ public class Periodo {
 			throw new Exception("Erro. A data de início não pode ser maior que a data do fim.");
 	}
 
+	/**
+	 * construtor para inicializar valores nos campos
+	 *
+	 * @param _dataInicio
+	 *            data do início como String
+	 * @param _dataFim
+	 *            data do fim como String
+	 * @throws Exception
+	 *             caso a data de inicio seja menor que a data do fim
+	 */
 	public Periodo(String _dataInicio, String _dataFim) throws Exception {
 		this(new Data(_dataInicio), "00:00", new Data(_dataFim), "23:59");
 	}
 
+	/**
+	 * construtor para inicializar valores nos campos
+	 *
+	 * @param _dataInicio
+	 *            data do início instanciado na classe Data
+	 * @param _horarioInicio
+	 *            horário do início como String
+	 * @param _dataFim
+	 *            data do fim instanciado na classe Data
+	 * @param _horarioFim
+	 *            horário do fim como String
+	 * @throws Exception
+	 *             caso a data de inicio seja menor que a data do fim
+	 */
 	public Periodo(Data _dataInicio, String _horarioInicio, Data _dataFim, String _horarioFim) throws Exception {
 		this(_dataInicio, new Horario(_horarioInicio), _dataFim, new Horario(_horarioFim));
 	}
 
+	/**
+	 * construtor para inicializar valores nos campos
+	 *
+	 * @param _dataInicio
+	 *            data do início como String
+	 * @param _horarioInicio
+	 *            horário do início como String
+	 * @param _dataFim
+	 *            data do fim como String
+	 * @param _horarioFim
+	 *            horário do fim como String
+	 * @throws Exception
+	 *             caso a data de inicio seja menor que a data do fim
+	 */
 	public Periodo(String _dataInicio, String _horarioInicio, String _dataFim, String _horarioFim) throws Exception {
 		this(new Data(_dataInicio), new Horario(_horarioInicio), new Data(_dataFim), new Horario(_horarioFim));
 	}

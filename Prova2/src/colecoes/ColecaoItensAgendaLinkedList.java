@@ -132,12 +132,20 @@ public class ColecaoItensAgendaLinkedList implements Serializable {
 	 *         intervalo estabelecido
 	 */
 	//NAO TA FUNCIONANDO
-	public String imprimeIntervalo(Periodo _periodo) {
-		StringBuilder lista = new StringBuilder();
+	public void imprimeIntervalo(Periodo _periodo) {
+		List<ItemAgenda> intervalo = new LinkedList<ItemAgenda>();
 		for (int i = 0; i < this.agenda.size(); i++)
-			if (this.agenda.get(i).getPeriodo().isIntervalo(_periodo) == 1)
-				lista.append(this.agenda.get(i) + " ");
-		return lista.toString();
+			if (agenda.get(i).getPeriodo().isIntervalo(_periodo) == 1) {
+				intervalo.add(agenda.get(i));
+			}
+		System.out.println(intervalo);
+		intervalo.removeAll(intervalo);
+		
+//		StringBuilder lista = new StringBuilder();
+//		for (int i = 0; i < this.agenda.size(); i++)
+//			if (this.agenda.get(i).getPeriodo().isIntervalo(_periodo) == 1)
+//				lista.append(this.agenda.get(i) + " ");
+//		return lista.toString();
 	}
 
 	/**
