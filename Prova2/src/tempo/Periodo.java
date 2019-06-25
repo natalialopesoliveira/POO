@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @author Natália Lopes Oliveira
  * @version 1.0 (junho-2019)
  */
-public class Periodo  implements Serializable {
+public class Periodo implements Serializable {
 	/** data do início */
 	private Data dataInicio;
 	/** data do fim */
@@ -94,38 +94,82 @@ public class Periodo  implements Serializable {
 		this(new Data(_dataInicio), new Horario(_horarioInicio), new Data(_dataFim), new Horario(_horarioFim));
 	}
 
+	/**
+	 * método que modifica o campo dataInicio para o valor passado
+	 * 
+	 * @param _dataInicio
+	 *            uma data instanciada representando a data de inicio
+	 */
 	public void setDataInicio(Data _dataInicio) {
 		this.dataInicio = _dataInicio;
 	}
 
+	/**
+	 * método que modifica o campo dataFim para o valor passado
+	 * 
+	 * @param _dataFim
+	 *            uma data instanciada representando a data de fim
+	 */
 	public void setDataFim(Data _dataFim) {
 		this.dataFim = _dataFim;
 	}
 
+	/**
+	 * método que modifica o campo horarioInicio para o valor passado
+	 * 
+	 * @param _horarioInicio
+	 *            um horário instanciado representando o horário de inicio
+	 */
 	public void setHorarioInicio(Horario _horarioInicio) {
 		this.horarioInicio = _horarioInicio;
 	}
 
+	/**
+	 * método que modifica o campo horarioFim para o valor passado
+	 * 
+	 * @param _horarioFim
+	 *            um horário instanciado representando o horário de fim
+	 */
 	public void setHorarioFim(Horario _horarioFim) {
 		this.horarioFim = _horarioFim;
 	}
 
+	/**
+	 * @return um objeto da classe Data representando a data de inicio
+	 */
 	public Data getDataInicio() {
 		return this.dataInicio;
 	}
 
+	/**
+	 * @return um objeto da classe Data representando a data de fim
+	 */
 	public Data getDataFim() {
 		return this.dataFim;
 	}
 
+	/**
+	 * @return um objeto da classe Horario representando o horario de inicio
+	 */
 	public Horario getHorarioInicio() {
 		return this.horarioInicio;
 	}
 
+	/**
+	 * @return um objeto da classe Horario representando o horario de fim
+	 */
 	public Horario getHorarioFim() {
 		return this.horarioFim;
 	}
 
+	/**
+	 * método que vê se o objeto que chamou o método se encontra dentro do período
+	 * passado como parâmetro
+	 * 
+	 * @param _periodo
+	 *            período passado como parâmetro
+	 * @return int 1 se está no intervalo, 0 se não
+	 */
 	public int isIntervalo(Periodo _periodo) {
 		if ((this.getDataInicio().compareTo(_periodo.getDataInicio()) == 1
 				|| this.getDataInicio().compareTo(_periodo.getDataInicio()) == 0)
@@ -136,6 +180,11 @@ public class Periodo  implements Serializable {
 
 	}
 
+	/*
+	 * Método sobrescrito que retorna uma string representando o período
+	 * 
+	 * @return uma String que representa o período
+	 */
 	public String toString() {
 		StringBuilder periodo = new StringBuilder();
 		periodo.append(" dia ");
@@ -146,7 +195,6 @@ public class Periodo  implements Serializable {
 		periodo.append(this.getDataFim());
 		periodo.append(" às ");
 		periodo.append(this.getHorarioFim());
-		periodo.append(".");
 
 		return periodo.toString();
 	}

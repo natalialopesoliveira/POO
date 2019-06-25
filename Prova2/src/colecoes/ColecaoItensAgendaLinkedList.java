@@ -160,10 +160,12 @@ public class ColecaoItensAgendaLinkedList implements Serializable {
 	}
 
 	/**
-	 * método para imprimir apenas objetos da classe Lembrete por ordem crescente de
-	 * minutos de antecedência. É criada uma LinkedList auxiliar apenas para salvar
-	 * objetos da classe Lembrete, os quais são ordenados nessa lista. Após a
-	 * impressão, a lista é deletada.
+	 * método que retorna uma LinkedList contendo um objeto da classe Lembrete para
+	 * imprimir na classe Uso apenas objetos da classe Lembrete por ordem crescente de
+	 * priodidade
+	 * 
+	 * @return LinkedList<Meta> retorna uma LinkedList contendo um objeto da classe
+	 *         Meta
 	 */
 	public LinkedList<Lembrete> imprimeLembreteMinutos() {
 		List<Lembrete> lembrete = new LinkedList<Lembrete>();
