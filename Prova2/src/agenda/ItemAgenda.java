@@ -1,9 +1,12 @@
 package agenda;
+
+import java.io.Serializable;
+
 import tempo.Data;
 import tempo.Horario;
 import tempo.Periodo;
 
-public abstract class ItemAgenda {
+public abstract class ItemAgenda implements Serializable {
 	private String titulo, descricao;
 	private Periodo periodo;
 

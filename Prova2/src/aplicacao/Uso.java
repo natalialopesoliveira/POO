@@ -1,9 +1,12 @@
 package aplicacao;
 
 import agenda.*;
+
 import colecoes.*;
 import tempo.*;
 
+import java.awt.List;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public final class Uso {
@@ -105,24 +108,50 @@ public final class Uso {
 					scanner.nextLine();
 					if (relatorio == 1) {
 						System.out.println("\nTodos os itens agendados:\n");
-						System.out.println(lista);
+						Arquivo.grava("itensAgendados.my",lista);
+						ColecaoItensAgendaLinkedList itensAgendados1;
+						itensAgendados1 = (ColecaoItensAgendaLinkedList) Arquivo.le("itensAgendados.my");
+						System.out.println(itensAgendados1.toString());
+//						System.out.println(lista);
 					} else if (relatorio == 2) {
 						System.out.print("\nDigite a data de início do intervalo: ");
 						String _dataInicioIntervalo = scanner.nextLine();
 						System.out.print("\nDigite a data de fim do intervalo: ");
 						String _dataFimIntervalo = scanner.nextLine();
-						System.out.println("\nTodos os itens agendados no intervalo entre as datas "
-								+ _dataInicioIntervalo + " e " + _dataFimIntervalo + ": ");
-						lista.imprimeIntervalo(new Periodo(_dataInicioIntervalo, _dataFimIntervalo));
+
+						Arquivo.grava("imprimeIntervalo.my",
+								lista.imprimeIntervalo(new Periodo(_dataInicioIntervalo, _dataFimIntervalo)));
+						ColecaoItensAgendaLinkedList imprimeIntervalo1;
+						imprimeIntervalo1 = (ColecaoItensAgendaLinkedList) Arquivo.le("imprimeIntervalo.my");
+						System.out.println(
+								"\nTodos os itens agendados no intervalo entre as datas " + _dataInicioIntervalo + " e "
+										+ _dataFimIntervalo + ": " + imprimeIntervalo1.toString());
+
 					} else if (relatorio == 3) {
 						System.out.println("Todas as metas em ordem de prioridade:");
-						lista.imprimeMetaPrioridade();
+	
+						Arquivo.grava("metasPrioridade.my",lista.imprimeMetaPrioridade());
+		              	LinkedList<Meta> metasPrioridade1;
+		              	metasPrioridade1 = (LinkedList<Meta>)Arquivo.le("metasPrioridade.my");
+		              	System.out.println(metasPrioridade1.toString());
+
+//						lista.imprimeMetaPrioridade();
 					} else if (relatorio == 4) {
 						System.out.println("Todos os lembretes em ordem de minutos de antecedência:");
-						lista.imprimeLembreteMinutos();
+						
+						Arquivo.grava("lembretesMinutos.my",lista.imprimeLembreteMinutos());
+		              	LinkedList<Lembrete> lembretesMinutos;
+		              	lembretesMinutos = (LinkedList<Lembrete>)Arquivo.le("lembretesMinutos.my");
+		              	System.out.println(lembretesMinutos.toString());
+//						lista.imprimeLembreteMinutos();
 					} else if (relatorio == 5) {
 						System.out.println("Todos os eventos em ordem alfabética de local:");
-						lista.imprimeEventoLocal();
+						
+						Arquivo.grava("eventosLocal.my",lista.imprimeEventoLocal());
+		              	LinkedList<Evento> eventosLocal;
+		              	eventosLocal = (LinkedList<Evento>)Arquivo.le("eventosLocal.my");
+		              	System.out.println(eventosLocal.toString());
+//						lista.imprimeEventoLocal();
 					} else {
 						System.out.println("\nOpção inválida. Tente novamente.\n");
 					}

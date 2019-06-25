@@ -1,6 +1,8 @@
 package tempo;
 
-public class Horario {
+import java.io.Serializable;
+
+public class Horario  implements Serializable {
 	private int horas, minutos;
 
 	public Horario() throws Exception {

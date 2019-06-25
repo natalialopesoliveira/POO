@@ -127,25 +127,15 @@ public class ColecaoItensAgendaLinkedList implements Serializable {
 	 * @param _periodo
 	 *            período estabelecido pelo usuário para comparação com os objetos
 	 *            já criados
-	 * @return String retorna um objeto da classe StringBuilder em forma de String
-	 *         de todos os itens de agenda instanciados que se encontram no
-	 *         intervalo estabelecido
+	 * @return Lista que contem os itens no intervalo
 	 */
-	//NAO TA FUNCIONANDO
-	public void imprimeIntervalo(Periodo _periodo) {
-		List<ItemAgenda> intervalo = new LinkedList<ItemAgenda>();
+	public ColecaoItensAgendaLinkedList imprimeIntervalo(Periodo _periodo) {
+		ColecaoItensAgendaLinkedList intervalo = new ColecaoItensAgendaLinkedList();
 		for (int i = 0; i < this.agenda.size(); i++)
 			if (agenda.get(i).getPeriodo().isIntervalo(_periodo) == 1) {
-				intervalo.add(agenda.get(i));
+				intervalo.insere(agenda.get(i));
 			}
-		System.out.println(intervalo);
-		intervalo.removeAll(intervalo);
-		
-//		StringBuilder lista = new StringBuilder();
-//		for (int i = 0; i < this.agenda.size(); i++)
-//			if (this.agenda.get(i).getPeriodo().isIntervalo(_periodo) == 1)
-//				lista.append(this.agenda.get(i) + " ");
-//		return lista.toString();
+		return intervalo;
 	}
 
 	/**
@@ -154,15 +144,14 @@ public class ColecaoItensAgendaLinkedList implements Serializable {
 	 * auxiliar apenas para salvar objetos da classe Meta, os quais são ordenados
 	 * nessa lista. Após a impressão, a lista é deletada.
 	 */
-	public void imprimeMetaPrioridade() {
+	public LinkedList<Meta> imprimeMetaPrioridade() {
 		List<Meta> meta = new LinkedList<Meta>();
 		for (int i = 0; i < this.agenda.size(); i++)
 			if (agenda.get(i) instanceof Meta) {
 				meta.add((Meta) agenda.get(i));
 			}
 		Collections.sort(meta, new ComparaPorPrioridade());
-		System.out.println(meta);
-		meta.removeAll(meta);
+		return (LinkedList<Meta>) meta;
 
 	}
 
@@ -172,15 +161,14 @@ public class ColecaoItensAgendaLinkedList implements Serializable {
 	 * objetos da classe Lembrete, os quais são ordenados nessa lista. Após a
 	 * impressão, a lista é deletada.
 	 */
-	public void imprimeLembreteMinutos() {
+	public LinkedList<Lembrete> imprimeLembreteMinutos() {
 		List<Lembrete> lembrete = new LinkedList<Lembrete>();
 		for (int i = 0; i < this.agenda.size(); i++)
 			if (agenda.get(i) instanceof Lembrete) {
 				lembrete.add((Lembrete) agenda.get(i));
 			}
 		Collections.sort(lembrete, new ComparaLembreteMinutos());
-		System.out.println(lembrete);
-		lembrete.removeAll(lembrete);
+		return (LinkedList<Lembrete>) lembrete;
 
 	}
 
@@ -190,15 +178,14 @@ public class ColecaoItensAgendaLinkedList implements Serializable {
 	 * Evento, os quais são ordenados nessa lista. Após a impressão, a lista é
 	 * deletada.
 	 */
-	public void imprimeEventoLocal() {
+	public LinkedList<Evento> imprimeEventoLocal() {
 		List<Evento> evento = new LinkedList<Evento>();
 		for (int i = 0; i < this.agenda.size(); i++)
 			if (agenda.get(i) instanceof Evento) {
 				evento.add((Evento) agenda.get(i));
 			}
 		Collections.sort(evento, new ComparaEventoLocal());
-		System.out.println(evento);
-		evento.removeAll(evento);
+		return (LinkedList<Evento>) evento;
 
 	}
 

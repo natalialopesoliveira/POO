@@ -1,5 +1,7 @@
 package tempo;
 
+import java.io.Serializable;
+
 /**
  * Classe que representa o período, contendo data e horário de inicio e data e
  * horário de fim.
@@ -7,7 +9,7 @@ package tempo;
  * @author Natália Lopes Oliveira
  * @version 1.0 (junho-2019)
  */
-public class Periodo {
+public class Periodo  implements Serializable {
 	/** data do início */
 	private Data dataInicio;
 	/** data do fim */
